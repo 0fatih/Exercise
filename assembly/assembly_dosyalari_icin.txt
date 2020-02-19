@@ -1,0 +1,3 @@
+Assemblyyyy nasm -f elf64 dosya.asm 
+ ld -s -o dosya dosya.o 
+ ./dosya
