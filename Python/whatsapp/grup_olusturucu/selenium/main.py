@@ -62,7 +62,6 @@ def grup_olustur(hedef,grup_ismi,grup_mesaj,grup_sayisi):
 
         button = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span')
         button.click()                          
-        time.sleep(1.2)
 
         uc_nokta2 = driver.find_element_by_xpath("/html/body/div[1]/div/div/div[4]/div/header/div[3]/div/div[3]/div/span")
         uc_nokta2.click()
@@ -74,19 +73,17 @@ def grup_olustur(hedef,grup_ismi,grup_mesaj,grup_sayisi):
         
         cik_butonu = driver.find_element_by_xpath('//*[@id="app"]/div/span[2]/div/div/div/div/div/div/div[2]/div[2]')
         cik_butonu.click()
-        time.sleep(2)
         
         grup = driver.find_element_by_xpath('//*[@id="main"]/header')
         grup.click()
-        time.sleep(2)
+        time.sleep(1)
         
         grubu_sil = driver.find_element_by_xpath('//*[@id="app"]/div/div/div[2]/div[3]/span/div/span/div/div/div[1]/div[6]/div/div[2]/div/span')
         grubu_sil.click()
-        time.sleep(2)
+        time.sleep(1)
         
         sil_butonu = driver.find_element_by_xpath('//*[@id="app"]/div/span[2]/div/div/div/div/div/div/div[2]/div[2]')
         sil_butonu.click()
-        time.sleep(2)
         
     driver.quit()
 

@@ -21,11 +21,11 @@ def bot(target,msg,ms):
             button.click()
     
     else:
-        msg = get_random_string()
-        msg_box.send_keys(msg)
-        button = driver.find_element_by_class_name('hnQHL')
-        button = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span')
-        button.click()        
+        for i in range(ms):
+            msg_box.send_keys(msg)
+            button = driver.find_element_by_class_name('hnQHL')
+            button = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span')
+            button.click()        
 
 def menu():
     print("""
