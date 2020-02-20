@@ -1,11 +1,10 @@
 from selenium import webdriver
 
-
 def bot(target,msg,ms):
     driver = webdriver.Chrome()
     driver.get('https://web.whatsapp.com/')
 
-    input("QR Kodu okuttuktan sonra herhangi bir tusa basin!")
+    input("Enter a button after QR code!")
 
     user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(target))
     user.click()
@@ -20,15 +19,15 @@ def bot(target,msg,ms):
 def menu():
     print("""
 
-            Whatsapp Spammer'a Hosgeldiniz
+           Welcome to WhatsApp Message Spammer 
 
 
 
     Coded by FFH
     """)
-    target = input("Lutfen saldirmak istediginiz kisinin ismini girin :")
+    target = input("Please enter a target: ")
     msg = input('Enter your message :')
-    mesaj_sayisi = int(input("Kac mesaj atmak istersiniz :"))
+    mesaj_sayisi = int(input("Counts of messages: "))
     bot(target,msg,mesaj_sayisi)
 
 
