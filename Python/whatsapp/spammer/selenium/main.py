@@ -1,5 +1,6 @@
 from selenium import webdriver
-
+import random
+import string
 def bot(target,msg,ms):
     driver = webdriver.Chrome()
     driver.get('https://web.whatsapp.com/')
@@ -10,12 +11,22 @@ def bot(target,msg,ms):
     user.click()
 
     msg_box = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[2]/div')
-
-    for i in range(ms):
+    
+    if(msg=="random"):
+        for i in range(ms):
+            msg = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(25))
+            msg_box.send_keys(msg)
+            button = driver.find_element_by_class_name('hnQHL')
+            button = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span')
+            button.click()
+    
+    else:
+        msg = get_random_string()
         msg_box.send_keys(msg)
         button = driver.find_element_by_class_name('hnQHL')
         button = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span')
-        button.click()
+        button.click()        
+
 def menu():
     print("""
 
@@ -26,9 +37,9 @@ def menu():
     Coded by FFH
     """)
     target = input("Please enter a target: ")
-    msg = input('Enter your message :')
-    mesaj_sayisi = int(input("Counts of messages: "))
-    bot(target,msg,mesaj_sayisi)
+    msg = input('Enter your message(enter "random" for random messages) :')
+    count = int(input("Counts of messages: "))
+    bot(target,msg,count)
 
 
 menu()

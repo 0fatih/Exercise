@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+#This code is bullshite. Use what I wrote with selenium
+
 import pyautogui
 import random
 import keyboard
