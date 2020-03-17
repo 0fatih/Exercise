@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get install telegram code
+sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get install telegram code npm go
 cd
 mkdir git-tools
 cd git-tools
@@ -24,6 +24,9 @@ vim -u NONE -c "helptags surround/doc" -c q
 cd
 wget https://raw.githubusercontent.com/0fatih/Dot-Files/master/.vimrc
 
+echo "VIM PLUGININSTALL YAP"
+cd ~/.vimrc/bundle/YouCompleteMe/
+python install.py --all
 # .bashrc icin
 https://raw.githubusercontent.com/0fatih/Dot-Files/master/.bashrc
 
