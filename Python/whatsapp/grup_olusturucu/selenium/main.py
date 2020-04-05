@@ -16,7 +16,6 @@ def menu():
     grup_ismi = input("Gruplarin ismi :")
     grup_mesaj = input("Gruplara yazilacak mesaj :")
     grup_sayisi = int(input("Kac grup kurulsun :"))
-    
     grup_olustur(hedef,grup_ismi,grup_mesaj,grup_sayisi)
     
 
