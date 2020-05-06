@@ -1,6 +1,7 @@
 from selenium import webdriver
 import random
 import string
+
 def bot(target,msg,ms):
     driver = webdriver.Chrome()
     driver.get('https://web.whatsapp.com/')
@@ -16,7 +17,7 @@ def bot(target,msg,ms):
         for i in range(ms):
             msg = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(25))
             msg_box.send_keys(msg)
-            button = driver.find_element_by_class_name('hnQHL')
+            button = driver.find_element_by_css_selector('#main > footer > div._3pkkz.V42si.copyable-area > div:nth-child(3) > button > span')
             button = driver.find_element_by_xpath('//*[@id="main"]/footer/div[1]/div[3]/button/span')
             button.click()
     
